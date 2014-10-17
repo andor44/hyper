@@ -181,6 +181,10 @@ macro_rules! inspect(
     })
 )
 
+#[cfg(test)]
+#[macro_escape]
+mod mock;
+
 pub mod client;
 pub mod method;
 pub mod header;
@@ -191,7 +195,6 @@ pub mod status;
 pub mod uri;
 pub mod version;
 
-#[cfg(test)] mod mock;
 
 mod mimewrapper {
     /// Re-exporting the mime crate, for convenience.
